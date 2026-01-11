@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #0A0A0A;
+  --bg-secondary: #121212;
+  --bg-card: #161616;
+  --border-subtle: #1F1F1F;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1A1;
+  --text-muted: #7D7D7D;
+
+  --gold-main: rgb(230, 200, 140);
+  --gold-light: #F1D9A6;
+  --gold-muted: #9C7A3C;
+  --gold-deep: #6F5525;
+
+  --font-main: 'Outfit', sans-serif;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-deep);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.glass {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.brand-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.pill-nav {
+  padding: 6px;
+  border-radius: 100px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.nav-link {
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.hire-me-btn {
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--gold-main);
+  color: var(--bg-main);
+  transition: var(--transition-smooth);
+  pointer-events: auto;
+}
+
+.hire-me-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(230, 199, 139, 0.2);
+}
+
+.nav-link:hover {
+  color: var(--gold-light);
+  background: rgba(230, 199, 139, 0.05);
+}
+
+.nav-link.active {
+  color: var(--bg-main);
+  background: var(--gold-main);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-muted) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
