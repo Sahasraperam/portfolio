@@ -83,7 +83,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                     letterSpacing: wordIndex === 2 ? '0.15em' : '0.1em',
                     textTransform: 'uppercase',
                     lineHeight: 1.1,
-                    textShadow: wordIndex === 2 ? '0 0 30px rgba(230, 199, 139, 0.3)' : 'none'
+                    textShadow: wordIndex === 2 ? '0 0 30px rgba(255, 191, 0, 0.3)' : 'none'
                   }}
                 >
                   {revealWords[wordIndex]}
@@ -96,7 +96,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
               marginTop: '60px',
               width: '300px',
               height: '1px',
-              background: 'rgba(230, 199, 139, 0.1)',
+              background: 'rgba(255, 191, 0, 0.1)',
               position: 'relative'
             }}>
               <motion.div

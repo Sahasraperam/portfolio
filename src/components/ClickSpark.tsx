@@ -138,7 +138,7 @@ export const ClickSpark: React.FC<ClickSparkProps> = ({
   }, [sparkCount]);
 
   return (
-    <div style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
+    <>
       <canvas
         ref={canvasRef}
         style={{
@@ -147,13 +147,15 @@ export const ClickSpark: React.FC<ClickSparkProps> = ({
           width: '100vw',
           height: '100vh',
           pointerEvents: 'none',
-          zIndex: 1, // Sandwiched layer
+          zIndex: 10000, // Top layer
           display: 'block'
         }}
       />
-      <div style={{ position: 'relative', zIndex: 2, isolation: 'isolate' }}>
-        {children}
-      </div>
-    </div>
+      {children && (
+        <div style={{ position: 'relative', zIndex: 2, isolation: 'isolate' }}>
+          {children}
+        </div>
+      )}
+    </>
   );
 };
